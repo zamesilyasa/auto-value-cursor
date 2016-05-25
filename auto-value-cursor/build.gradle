@@ -1,9 +1,14 @@
 import org.gradle.internal.jvm.Jvm
 
 apply plugin: 'java'
+apply plugin: 'io.sweers.acp'
 
 sourceCompatibility = rootProject.ext.javaVersion
 targetCompatibility = rootProject.ext.javaVersion
+
+acp {
+    api = rootProject.ext.androidVersion
+}
 
 dependencies {
     compile project(':auto-value-cursor-annotations')

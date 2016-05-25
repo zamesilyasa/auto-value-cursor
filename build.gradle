@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+    dependencies {
+        classpath 'io.sweers.acp:gradle-plugin:0.1.0-SNAPSHOT'
+    }
+}
+
 allprojects {
     repositories {
         mavenCentral()
@@ -7,6 +17,7 @@ allprojects {
 
 ext {
     javaVersion = JavaVersion.VERSION_1_7
+    androidVersion = 23
 }
 
 ext.deps = [
@@ -16,7 +27,6 @@ ext.deps = [
         auto_ext_util: 'com.gabrielittner.auto.value:auto-value-extension-util:0.2.1',
 
         auto_service: 'com.google.auto.service:auto-service:1.0-rc2',
-        android: 'com.google.android:android:2.1.2',
 
         junit: 'junit:junit:4.12',
         truth: 'com.google.truth:truth:0.28',
